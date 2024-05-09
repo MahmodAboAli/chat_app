@@ -1,0 +1,12 @@
+// To know if the Keyboard is visible.
+if(WidgetsBinding.instance.window.viewInsets.bottom > 0.0)
+    {
+       // Keyboard is visible.
+    }
+    else
+    {
+       // Keyboard is not visible.
+    }
+// Or
+MediaQuery.of(context).viewInsets.bottom > 0.0 // Keyboard is visible.
+MediaQuery.of(context).viewInsets.bottom = 0.0 // Keyboard is invisible.
