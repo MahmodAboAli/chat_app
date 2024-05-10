@@ -1,6 +1,24 @@
 import 'package:flutter/material.dart';
 
 
+
+ThemeData lightTheme = ThemeData(
+  fontFamily: 'Urbanist',
+  textTheme: const TextTheme(
+    // displayLarge instead of headline1
+    displayLarge: TextStyle(fontWeight: FontWeight.bold, fontSize: 48),
+    // displayMedium is headline2
+    displayMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+    // displaySmall is headline3
+    displaySmall: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+    // headlineMedium is headline4
+    headlineMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+    // headlineSmall is headline5
+    headlineSmall: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+    // titleLarge is headline6
+    titleLarge: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+  ),
+);
 const TextStyle headline1 =
     TextStyle(fontWeight: FontWeight.bold, fontSize: 48);
 const TextStyle headline2 =
@@ -59,30 +77,3 @@ const TextStyle bodyXSmall3 =
 const TextStyle bodyXSmall4 =
     TextStyle(fontWeight: FontWeight.w400, fontSize: 10);
 
-// ThemeData lightTheme = ThemeData(
-//   fontFamily: 'Urbanist',
-//   textTheme: const TextTheme(
-//     // displayLarge instead of headline1
-//     displayLarge: TextStyle(fontWeight: FontWeight.bold, fontSize: 48),
-//     // displayMedium is headline2
-//     displayMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-//     // displaySmall is headline3
-//     displaySmall: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
-//     // headlineMedium is headline4
-//     headlineMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-//     // headlineSmall is headline5
-//     headlineSmall: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-//     // titleLarge is headline6
-//     titleLarge: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-//     // titleMedium is bodyXLarge
-//     titleMedium: TextStyle(),
-//     // titleSmall is bodyLarge
-//     titleSmall: TextStyle(),
-//     // bodyLarge is bodyMedium
-//     bodyLarge: TextStyle(),
-//     // bodyMedium is bodySmall
-//     bodyMedium: TextStyle(),
-//     // bodySmall is bodyXSmall
-//     bodySmall: TextStyle(),
-//   ),
-// );
