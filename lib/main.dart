@@ -1,7 +1,11 @@
-import 'package:chat_app/core/themes.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'core/themes.dart';
+import 'injection.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await init();
   runApp(const MyApp());
 }
 
