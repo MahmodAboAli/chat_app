@@ -1,12 +1,14 @@
-import 'package:chat_app/core/colors.dart';
-import 'package:chat_app/core/images.dart';
+import 'package:chat_app/core/constant.dart';
 import 'package:flutter/material.dart';
+
+import 'colors.dart';
+import 'images.dart';
 
 enum Logo { google, facebook, apple }
 
 /// this button is the default button of the app.
 class DefaultButton extends StatelessWidget {
-  /// Create a DefaultButton.
+  /// Create a [DefaultButton].
   ///
   /// you can choise between enabled and disabled mode of [DefaultButton],
   /// one could write:
@@ -60,7 +62,7 @@ class DefaultButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           shape: rectangleButton
               ? const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(15)))
+                  borderRadius: BorderRadius.all(Radius.circular(Constant.defaultRadius)))
               : null,
           padding: const EdgeInsets.symmetric(vertical: 17, horizontal: 30),
           elevation: 7,
@@ -77,7 +79,7 @@ class DefaultButton extends StatelessWidget {
 }
 
 class DefaultButtonWithIcon extends StatelessWidget {
-  /// Create a DefaultButtonWithIcon.
+  /// Create a [DefaultButtonWithIcon].
   ///
   /// you must to set icons from [FontAwesomeIcons] because it is more beautiful,
   /// one could write:
@@ -148,7 +150,7 @@ class DefaultButtonWithIcon extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           shape: rectangleButton
               ? const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(15)))
+                  borderRadius: BorderRadius.all(Radius.circular(Constant.defaultRadius)))
               : null,
           padding: const EdgeInsets.symmetric(vertical: 17, horizontal: 30),
           elevation: 7,
@@ -165,7 +167,7 @@ class DefaultButtonWithIcon extends StatelessWidget {
 }
 
 class SocialButton extends StatelessWidget {
-  /// Create a SocialButton.
+  /// Create a [SocialButton].
   ///
   /// To choise the logo you can use [Logo] enum, one could write:
   ///
@@ -212,7 +214,7 @@ class SocialButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(15)),
+            borderRadius: const BorderRadius.all(Radius.circular(Constant.defaultRadius)),
             side: isDark
                 ? const BorderSide(width: 1, color: greyscale300Color)
                 : BorderSide.none,
@@ -228,3 +230,32 @@ class SocialButton extends StatelessWidget {
     );
   }
 }
+
+class FloatingButton extends StatelessWidget {
+  const FloatingButton({
+    super.key,
+    required this.onPressed,
+    this.isRadius = true,
+    required this.backgroundColor,
+    required this.foregroundColor, required this.icon,
+  });
+  final void Function() onPressed;
+  final bool isRadius;
+  final IconData icon;
+  final Color backgroundColor;
+  final Color foregroundColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: onPressed,
+      backgroundColor: backgroundColor,
+      foregroundColor: foregroundColor,
+      elevation: 6,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(isRadius ? 30 : Constant.defaultRadius))),
+      child: Icon(icon),
+    );
+  }
+}
+

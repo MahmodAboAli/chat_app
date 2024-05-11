@@ -56,9 +56,7 @@ const Color deepOrangeColor = Color(0xffff5722);
 const Color brownColor = Color(0xff795548);
 const Color blueGreyColor = Color(0xff607d8b);
 
-const Color blueBackground = Color(0xffeef4ff);
-const Color greenBackground = Color(0xfff2fffc);
-const Color orangeBackground = Color(0xfffff8ed);
-const Color pinkBackground = Color(0xfffff5f5);
-const Color yellowBackground = Color(0xfffffee0);
-const Color purpleBackground = Color(0xfffcf4ff);
+const Color blueBackground = Color(0xffd3e1ff);
+const Color greenBackground = Color(0xffdbf8e6);
+const Color redBackground = Color(0xfffddddd);
+const Color yellowBackground = Color(0xfffef5d0);

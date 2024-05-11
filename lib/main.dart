@@ -1,3 +1,4 @@
+import 'package:chat_app/core/alert_messages.dart';
 import 'package:flutter/material.dart';
 
 import 'core/themes.dart';
@@ -18,7 +19,20 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       debugShowCheckedModeBanner: false,
       title: 'Hichat',
-      home: const Scaffold(),
+      home: const SafeArea(
+        child: Scaffold(
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Start'),
+                SizedBox(height: 30),
+                AlertMessage(),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
