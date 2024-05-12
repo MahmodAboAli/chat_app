@@ -8,6 +8,9 @@ const Color warningColor = Color(0xfffacc15);
 const Color errorColor = Color(0xfff75555);
 const Color disabled1Color = Color(0xffd8d8d8);
 const Color disabled2Color = Color(0xff3062c8);
+const Color focusedBorderTextFieldColor = Color(0xff92b4fd);
+const Color hintTextColor = Color(0xff9e9e9e);
+const Color labelTextColor = Color(0xff212121);
 
 const Color greyscale900Color = Color(0xff212121);
 const Color greyscale800Color = Color(0xff424242);
@@ -35,6 +38,15 @@ const Color dark1Color = Color(0xff181a20);
 const Color dark2Color = Color(0xff1f222a);
 const Color dark3Color = Color(0xff35383f);
 
+const Color blueBackground = Color(0xffd3e1ff);
+const Color greenBackground = Color(0xffdbf8e6);
+const Color redBackground = Color(0xfffddddd);
+const Color yellowBackground = Color(0xfffef5d0);
+const Color blueTextFieldBackground = Color(0xffeef4ff);
+const Color enabledLightTextFieldBackground = greyscale50Color;
+const Color enabledDarkTextFieldBackground = Color(0xff1f222a);
+const Color focusedTextFieldBackground = Color(0xffedf3ff);
+
 const Color whiteColor = Color(0xffffffff);
 const Color blackeColor = Color(0xff000000);
 const Color redColor = Color(0xfff44336);
@@ -55,8 +67,3 @@ const Color orangeColor = Color(0xffff9800);
 const Color deepOrangeColor = Color(0xffff5722);
 const Color brownColor = Color(0xff795548);
 const Color blueGreyColor = Color(0xff607d8b);
-
-const Color blueBackground = Color(0xffd3e1ff);
-const Color greenBackground = Color(0xffdbf8e6);
-const Color redBackground = Color(0xfffddddd);
-const Color yellowBackground = Color(0xfffef5d0);

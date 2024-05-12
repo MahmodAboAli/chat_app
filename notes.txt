@@ -10,3 +10,30 @@ if(WidgetsBinding.instance.window.viewInsets.bottom > 0.0)
 // Or
 MediaQuery.of(context).viewInsets.bottom > 0.0 // Keyboard is visible.
 MediaQuery.of(context).viewInsets.bottom = 0.0 // Keyboard is invisible.
+
+
+// focused background color for text field
+FocusNode _focusNode = FocusNode();
+Color _color = Colors.grey;
+@override
+void initState() {
+  _focusNode.addListener(() {
+    if(_focusNode.hasFocus){
+      setState(() {
+        _color = Colors.white;
+      });
+    }
+    else{
+      setState(() {
+        _color = Colors.grey;
+      });
+    }
+  });
+}
+TextField(
+  decoration: InputDecoration(
+    fillColor: _color,
+    filled: true
+  ),
+  focusNode: _focusNode,
+),

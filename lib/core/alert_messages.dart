@@ -1,16 +1,23 @@
 import 'package:chat_app/core/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'constant.dart';
 
 enum AlertColor { infoColor, warningColor, errorColor, successColor }
 
 class AlertMessage extends StatelessWidget {
+  /// Create a [AlertMessage].
+  /// To choose a color for [AlertMessage], one could write:
+  ///
+  /// AlertMessage(
+  ///   color: AlertColor.infoColor,
+  ///   ...
+  ///
+  /// ),
   const AlertMessage({
     super.key,
-    this.message = 'Alert message',
-    this.icon = FontAwesomeIcons.circleInfo,
+    required this.message,
+    required this.icon,
     AlertColor color = AlertColor.infoColor,
   })  : foregroundColor = color == AlertColor.infoColor
             ? infoColor
@@ -34,26 +41,29 @@ class AlertMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return AnimatedContainer(
-      decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius:
-              const BorderRadius.all(Radius.circular(Constant.defaultRadius))),
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      height: 45,
-      width: width - 70,
-      duration: const Duration(milliseconds: 500),
-      child: Row(
-        children: [
-          Icon(icon, color: foregroundColor, size: 18),
-          SizedBox(width: width * 0.03),
-          Expanded(
-              child: Text(message,
-                  style: TextStyle(
-                      color: foregroundColor,
-                      fontSize: 13,
-                      overflow: TextOverflow.ellipsis))),
-        ],
+    return AnimatedOpacity(
+      opacity: 1,
+      duration: const Duration(milliseconds: 200),
+      child: Container(
+        decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: const BorderRadius.all(
+                Radius.circular(Constant.defaultRadius))),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        height: 45,
+        width: width - 60,
+        child: Row(
+          children: [
+            Icon(icon, color: foregroundColor, size: 18),
+            SizedBox(width: width * 0.03),
+            Expanded(
+                child: Text(message,
+                    style: TextStyle(
+                        color: foregroundColor,
+                        fontSize: 13,
+                        overflow: TextOverflow.ellipsis))),
+          ],
+        ),
       ),
     );
   }
