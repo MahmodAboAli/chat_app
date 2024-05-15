@@ -37,3 +37,44 @@ TextField(
   ),
   focusNode: _focusNode,
 ),
+
+================================================================
+=          FocusNode doesn't work with Bloc (;_;)              =
+================================================================
+import 'package:bloc/bloc.dart';
+import 'package:chat_app/core/colors.dart';
+import 'package:flutter/material.dart';
+
+part 'state.dart';
+part 'event.dart';
+
+class TextFieldBloc extends Bloc<TextFieldEvent, TextFieldState> {
+  FocusNode focusNode = FocusNode();
+  Color? color = null;
+  TextFieldBloc() : super(TextFieldInitial()) {
+    on<ChangeBackgroundEvent>((event, emit)  {
+      color = event.hasFocus ? focusedTextFieldBackground : null;
+      emit(ChangeBackground());
+    });
+  }
+}
+
+part of 'bloc.dart';
+
+abstract class TextFieldEvent {}
+
+class ChangeBackgroundEvent extends TextFieldEvent {
+  final bool hasFocus;
+
+  ChangeBackgroundEvent({required this.hasFocus});
+}
+part of 'bloc.dart';
+
+
+abstract class TextFieldState {}
+
+class TextFieldInitial extends TextFieldState{}
+
+class ChangeBackground extends TextFieldState{}
+
+================================================================

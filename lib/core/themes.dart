@@ -6,7 +6,6 @@ import 'constant.dart';
 ThemeData lightTheme = ThemeData(
   fontFamily: 'Urbanist',
   scaffoldBackgroundColor: whiteColor,
-  textSelectionTheme: const TextSelectionThemeData(cursorColor: dark3Color),
   inputDecorationTheme: const InputDecorationTheme(
     prefixIconColor: labelTextColor,
     suffixIconColor: labelTextColor,
@@ -59,6 +58,27 @@ ThemeData lightTheme = ThemeData(
 ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: dark1Color,
   fontFamily: 'Urbanist',
+  inputDecorationTheme: const InputDecorationTheme(
+    prefixIconColor: labelTextColor,
+    suffixIconColor: labelTextColor,
+    contentPadding: EdgeInsets.symmetric(horizontal: 23, vertical: 18),
+    filled: true,
+    fillColor: enabledDarkTextFieldBackground,
+    hintStyle: TextStyle(color: hintTextColor),
+    labelStyle: TextStyle(color: labelTextColor),
+    border: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius:
+            BorderRadius.all(Radius.circular(Constant.defaultRadius))),
+    enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius:
+            BorderRadius.all(Radius.circular(Constant.defaultRadius))),
+    focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: focusedBorderTextFieldColor, width: 1),
+        borderRadius:
+            BorderRadius.all(Radius.circular(Constant.defaultRadius))),
+  ),
   textTheme: const TextTheme(
     // displayLarge instead of headline1
     displayLarge: TextStyle(
