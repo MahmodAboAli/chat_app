@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'core/custom_text_field.dart';
 import 'core/theme_bloc/bloc.dart';
 import 'core/themes.dart';
 import 'injection.dart';
@@ -79,6 +80,9 @@ class MyHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Main Page"),
+              CustomTextField(
+                hintText: 'Some text',
+              ),
             ],
           ),
         ),

@@ -9,7 +9,9 @@ class CustomTextField extends StatefulWidget {
     this.controller,
     this.obscureText = false,
     this.keyboardType,
-    this.onChanged, this.suffixIcon, this.prefixIcon,
+    this.onChanged,
+    this.suffixIcon,
+    this.prefixIcon,
   });
   final String hintText;
   final Widget? suffixIcon;
@@ -49,7 +51,30 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     //! edit color of cursor and selection text
     return TextFormField(
-      cursorColor: focusedBorderTextFieldColor,
+      //! on developing 
+      // contextMenuBuilder: (context, EditableTextState editableTextState) {
+      //   // editableTextState.showToolbar();
+      //   // return AdaptiveTextSelectionToolbar.buttonItems(
+      //   //     buttonItems: editableTextState.contextMenuButtonItems,
+      //   //     anchors: editableTextState.contextMenuAnchors);
+      //   return AdaptiveTextSelectionToolbar(
+      //     anchors: editableTextState.contextMenuAnchors,
+      //     children: editableTextState.contextMenuButtonItems
+      //         .map((e) => TextButton(onPressed: () {}, child: Text(e.label??'null')))
+      //         .toList(),
+      //   );
+      //   // return AdaptiveTextSelectionToolbar(
+      //   //   anchors: editableTextState.contextMenuAnchors,
+      //   //   children: [
+      //   //     TextButton(onPressed: (){}, child: Text('yuikuikuik')),
+      //   //     IconButton(
+      //   //         onPressed: () {
+      //   //           print(editableTextState.contextMenuButtonItems[3].label);
+      //   //         },
+      //   //         icon: const Icon(Icons.copy))
+      //   //   ],
+      //   // );
+      // },
       controller: widget.controller,
       onChanged: widget.onChanged,
       focusNode: _focusNode,

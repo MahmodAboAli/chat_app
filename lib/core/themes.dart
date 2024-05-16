@@ -4,8 +4,13 @@ import 'colors.dart';
 import 'constant.dart';
 
 ThemeData lightTheme = ThemeData(
-  fontFamily: 'Urbanist',
   scaffoldBackgroundColor: whiteColor,
+  fontFamily: 'Urbanist',
+  textSelectionTheme: const TextSelectionThemeData(
+    cursorColor: focusedBorderTextFieldColor,
+    selectionColor: focusedBorderTextFieldColor,
+    selectionHandleColor: focusedBorderTextFieldColor,
+  ),
   inputDecorationTheme: const InputDecorationTheme(
     prefixIconColor: labelTextColor,
     suffixIconColor: labelTextColor,
@@ -58,6 +63,11 @@ ThemeData lightTheme = ThemeData(
 ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: dark1Color,
   fontFamily: 'Urbanist',
+  textSelectionTheme: const TextSelectionThemeData(
+    cursorColor: focusedBorderTextFieldColor,
+    selectionColor: focusedBorderTextFieldColor,
+    selectionHandleColor: focusedBorderTextFieldColor,
+  ),
   inputDecorationTheme: const InputDecorationTheme(
     prefixIconColor: labelTextColor,
     suffixIconColor: labelTextColor,
