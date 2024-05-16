@@ -9,9 +9,11 @@ class CustomTextField extends StatefulWidget {
     this.controller,
     this.obscureText = false,
     this.keyboardType,
-    this.onChanged,
+    this.onChanged, this.suffixIcon, this.prefixIcon,
   });
   final String hintText;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final TextEditingController? controller;
   final bool obscureText;
   final TextInputType? keyboardType;
@@ -52,6 +54,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
       onChanged: widget.onChanged,
       focusNode: _focusNode,
       decoration: InputDecoration(
+        suffixIcon: widget.suffixIcon,
+        prefixIcon: widget.prefixIcon,
         fillColor: _backgroundColor,
         suffixIconColor: _iconColor,
         prefixIconColor: _iconColor,

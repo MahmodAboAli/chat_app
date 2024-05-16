@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'core/custom_text_field.dart';
 import 'core/theme_bloc/bloc.dart';
 import 'core/themes.dart';
 import 'injection.dart';
@@ -19,22 +18,24 @@ void main() async {
   /// one could write:
   ///
   /// ```dart
-  /// Text("label", style: Theme.of(context).textTheme.bodyLarge),
+  ///? Text("label", style: Theme.of(context).textTheme.bodyLarge),
   /// ```
+  ////////////////////////////////////////////////////////////////
   ///
   ///! Don't do this, But if you are forced to use a properties,
   ///! one could write:
   ///
   /// ```dart
-  /// Text("label", style: Theme.of(context).textTheme.bodyLarge.copyWith()),
+  ///? Text("label", style: Theme.of(context).textTheme.bodyLarge.copyWith()),
   /// ```
+  ////////////////////////////////////////////////////////////////
   ///
   ///! To call a [TextFormField] with our themes app
   ///  one could write:
   ///
   /// ```dart
-  /// CustomTextField(
-  ///   hintText: 'Some text',
+  ///? CustomTextField(
+  ///?   hintText: 'Some text',
   ///   ...
   /// ),
   WidgetsFlutterBinding.ensureInitialized();
@@ -71,28 +72,13 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Scaffold(
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                  onPressed: () {
-                    BlocProvider.of<ThemeBloc>(context).add(ChangeThemeEvent());
-                  },
-                  icon: const Icon(Icons.light_mode)),
-              const Padding(
-                padding: EdgeInsets.all(20.0),
-                child: CustomTextField(
-                  hintText: 'Enter name',
-                ),
-              ),
-              const SizedBox(height: 10),
-              const Padding(
-                padding: EdgeInsets.all(20.0),
-                child: CustomTextField(hintText: 'Enter password'),
-              ),
+              Text("Main Page"),
             ],
           ),
         ),
